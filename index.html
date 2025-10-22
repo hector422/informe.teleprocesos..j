@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Redes y Transmisión de Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .container {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        nav {
+            width: 250px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 20px;
+            /* Hace que el índice se mantenga visible al hacer scroll */
+            height: fit-content;
+        }
+        
+        nav h2 {
+            margin-top: 0;
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #0056b3;
+            font-weight: bold;
+        }
+        
+        main {
+            flex-grow: 1;
+            padding: 20px 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+        }
+        
+        h2,
+        h3 {
+            color: #007BFF;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        section {
+            padding-top: 20px;
+            /* Espacio para que el enlace del índice funcione bien */
+        }
+        
+        .capas-osi {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .capas-osi li {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-left: 3px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Conceptos Clave de Redes y Telecomunicaciones 🌐</h1>
+    </header>
+
+    <div class="container">
+
+        <nav>
+            <h2>Índice Interactivo</h2>
+            <ul>
+                <li><a href="#teleproceso">1. Fundamentos del Teleproceso</a></li>
+                <li><a href="#osi">2. Modelo OSI / ISO</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#capas-osi">2.1. Las 7 Capas OSI</a></li>
+                    </ul>
+                </li>
+                <li><a href="#transmision">3. Principios de Transmisión de Datos</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <section id="teleproceso">
+                <h2>1. Fundamentos del Teleproceso 📡</h2>
+                <p>El término **Teleproceso** se refiere al **procesamiento de datos que provienen de terminales remotas en una unidad central** a través de una red de telecomunicaciones. En esencia, combina la **telecomunicación** (la comunicación a distancia)
+                    con el **procesamiento de datos** (la manipulación de la información).</p>
+                <p>Nació a finales de los años 60 y es la base de todo lo que hoy conocemos como **redes de computadoras** e **Internet**. Su objetivo principal es:</p>
+                <ul>
+                    <li>Permitir que las computadoras intercambien información.</li>
+                    <li>Utilizar una **unidad central (servidor)** para procesar datos de múltiples **terminales (clientes)** ubicadas a distancia.</li>
+                    <li>Hacer que el uso de recursos remotos (como archivos e impresoras) sea transparente para el usuario.</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="osi">
+                <h2>2. Modelo OSI / ISO 🧩</h2>
+                <p>El **Modelo de Interconexión de Sistemas Abiertos (OSI - Open Systems Interconnection)** es un marco de referencia conceptual creado por la **ISO** (Organización Internacional de Normalización) para estandarizar cómo los diferentes sistemas
+                    informáticos se comunican entre sí.</p>
+                <p>Este modelo divide el proceso de comunicación en **siete capas** distintas. El principal beneficio es que **normaliza** los componentes de red, permitiendo que el hardware y el software de diferentes fabricantes puedan comunicarse e interoperar.</p>
+
+                <h3 id="capas-osi">2.1. Las 7 Capas OSI (De arriba hacia abajo)</h3>
+                <ul class="capas-osi">
+                    <li>**Capa 7: Aplicación** 📧 - Es la más cercana al usuario. Proporciona la interfaz para las aplicaciones de red (navegadores, correo, FTP). Protocolos: HTTP, SMTP.</li>
+                    <li>**Capa 6: Presentación** 🖼️ - Se encarga de la sintaxis y semántica de los datos, incluyendo la **codificación**, **cifrado** y **compresión** de la información para que sea entendible por la aplicación.</li>
+                    <li>**Capa 5: Sesión** 🤝 - Establece, gestiona y finaliza las conexiones (sesiones) entre dos aplicaciones de forma ordenada y sincronizada.</li>
+                    <li>**Capa 4: Transporte** 📦 - Asegura que los datos lleguen completos y en orden. Divide los datos en **segmentos** y controla el flujo y errores. Protocolos clave: **TCP** (confiable) y **UDP** (no confiable).</li>
+                    <li>**Capa 3: Red** 🗺️ - Se encarga del **direccionamiento lógico (IP)** y el **enrutamiento** de los paquetes de datos a través de múltiples redes para encontrar la mejor ruta hacia el destino.</li>
+                    <li>**Capa 2: Enlace de Datos** 🔗 - Transfiere los datos de un nodo a otro a través del medio físico, controlando el acceso al medio y detectando/corrigiendo errores. Utiliza la **dirección MAC** y organiza los datos en **tramas (frames)**.</li>
+                    <li>**Capa 1: Física** ⚡ - Define las características físicas del medio de transmisión (cables, conectores, voltajes, señales). Se ocupa de la transmisión de **bits** (0s y 1s).</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="transmision">
+                <h2>3. Principios de Transmisión de Datos 💡</h2>
+                <p>La **transmisión de datos** es el movimiento de información codificada (bits) de un punto a otro mediante señales eléctricas, ópticas o electromagnéticas.</p>
+
+                <h3>Señales: Analógicas vs. Digitales</h3>
+                <ul>
+                    <li>**Señal Analógica:** Representación **continua** de la información (ej. la voz humana). La información está contenida en la forma de la onda.</li>
+                    <li>**Señal Digital:** Representación en valores **discretos** (ej. pulsos de 0s y 1s). Es menos susceptible al ruido y se puede regenerar fácilmente.</li>
+                </ul>
+
+                <h3>Conceptos Clave</h3>
+                <p>Para enviar datos, especialmente si son digitales a través de un medio analógico o viceversa, se utilizan técnicas fundamentales:</p>
+
+                <ul>
+                    <li>**Codificación:** Convierte los datos binarios (0s y 1s) en una señal digital apta para la transmisión. Ejemplos de esquemas de codificación incluyen **NRZ** y **Manchester**.</li>
+                    <li>**Modulación:** Proceso de adaptar una señal digital a un medio analógico (o viceversa), modificando una característica de la onda portadora (amplitud, frecuencia o fase) en función de la señal de datos.
+                        <ul>
+                            <li>**ASK** (Modulación por Desplazamiento de Amplitud)</li>
+                            <li>**FSK** (Modulación por Desplazamiento de Frecuencia)</li>
+                            <li>**PSK** (Modulación por Desplazamiento de Fase)</li>
+                        </ul>
+                    </li>
+                    <li>**Atenuación:** La pérdida de intensidad de la señal a medida que viaja por el medio.</li>
+                    <li>**Ruido:** Energía no deseada que se suma a la señal, dificultando la correcta interpretación de los datos.</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
